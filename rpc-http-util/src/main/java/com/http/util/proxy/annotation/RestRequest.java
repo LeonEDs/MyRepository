@@ -1,10 +1,11 @@
-package com.http.util.annotation;
+package com.http.util.proxy.annotation;
 
 import java.lang.annotation.*;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface RestHttpClient
+public @interface RestRequest
 {
+    String path() default "";
 }

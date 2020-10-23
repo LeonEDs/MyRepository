@@ -1,6 +1,6 @@
 server:
-  port: 8081
+  port: 8182
 
 spring:
   application:
-    name: xx-xxx
+    name: xx-xxx2

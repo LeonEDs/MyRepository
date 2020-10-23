@@ -1,6 +1,7 @@
-package com.http.util.handler;
+package com.http.util.proxy.registry;
 
-import com.http.util.annotation.RestHttpClient;
+import com.http.util.proxy.annotation.RestRequest;
+import com.http.util.proxy.handler.ServiceFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
@@ -40,7 +41,7 @@ public class ServiceBeanDefinitionRegistry implements BeanDefinitionRegistryPost
         Set<Class<?>> beanClazz = scannerPackages("**.service");
         for (Class<?> clazz : beanClazz)
         {
-            boolean isAnnotation = clazz.isAnnotationPresent(RestHttpClient.class);
+            boolean isAnnotation = clazz.isAnnotationPresent(RestRequest.class);
             if (!isAnnotation)
             {
                 continue;

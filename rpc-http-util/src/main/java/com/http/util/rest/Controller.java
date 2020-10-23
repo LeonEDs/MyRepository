@@ -1,15 +1,11 @@
 package com.http.util.rest;
 
-import com.http.util.KeyValue;
 import com.http.util.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class Controller
@@ -17,15 +13,19 @@ public class Controller
     @Autowired
     TestService testService;
 
-    @GetMapping("/xxx/getInfo")
-    public KeyValue getInfo(String message, HttpServletRequest request, HttpServletResponse response)
+    @GetMapping("test1")
+    public void testService1()
     {
-        return new KeyValue("XXX", message);
+        Map<String, Object> getResult = testService.getInfo("AAABBBXXX");
+        System.out.println(">>> GET   :   " + getResult.toString());
     }
 
-    @PostMapping("/xxx/postInfo")
-    public KeyValue postInfo(@RequestBody KeyValue message, HttpServletRequest request, HttpServletResponse response)
+    @GetMapping("test2")
+    public void testService2()
     {
-        return message;
+        Map<String, Object> map = new HashMap<>();
+        map.put("AAAA","BBBB");
+        Map<String, Object> postResult = testService.postInfo(map);
+        System.out.println(">>> POST   :   " + postResult.toString());
     }
 }

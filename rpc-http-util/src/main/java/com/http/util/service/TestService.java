@@ -1,17 +1,18 @@
 package com.http.util.service;
 
-import com.http.util.KeyValue;
-import com.http.util.annotation.Param;
-import com.http.util.annotation.RequestPath;
-import com.http.util.annotation.RestHttpClient;
-import org.springframework.http.HttpMethod;
+import com.http.util.proxy.annotation.RestGet;
+import com.http.util.proxy.annotation.RestParam;
+import com.http.util.proxy.annotation.RestPost;
+import com.http.util.proxy.annotation.RestRequest;
 
-@RestHttpClient
+import java.util.Map;
+
+@RestRequest(path = "http://127.0.0.1:8181/xxx")
 public interface TestService
 {
-    @RequestPath(url = "http://127.0.0.1:8081/xxx/getInfo", method = HttpMethod.GET)
-    KeyValue getInfo(@Param(name = "message") String username);
+    @RestGet(path = "/getInfo")
+    Map<String, Object> getInfo(@RestParam("message") String username);
 
-    @RequestPath(url = "http://127.0.0.1:8081/xxx/postInfo", method = HttpMethod.POST)
-    KeyValue postInfo(@Param(type = Param.JSON) KeyValue keyValue);
+    @RestPost(path = "/postInfo")
+    Map<String, Object> postInfo(@RestParam Map<String, Object> keyValue);
 }
