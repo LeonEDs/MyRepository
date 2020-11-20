@@ -10,8 +10,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.example</groupId>
-    <artifactId>rpc-http-util</artifactId>
+    <groupId>com.example.demo</groupId>
+    <artifactId>rest-client-proxy</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
