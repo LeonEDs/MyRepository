@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.demo.dubbo" />
+    <context:property-placeholder location="classpath:mybatis/jdbc.properties" />
+
+    <!--定义了提供方应用信息，用于计算依赖关系；在 dubbo-admin 或 dubbo-monitor 会显示这个名字，方便辨识-->
+    <dubbo:application name="demotest-provider" owner="programmer" organization="dubbox"/>
+
+    <!--使用 zookeeper 注册中心 dubbo协议20880端口-->
+    <dubbo:registry protocol="zookeeper" address="zookeeper://localhost:2181" timeout="300000"/>
+    <dubbo:protocol name="dubbo" port="20880" />
+
+    <!--配置接口-->
+    <dubbo:service interface="com.demo.dubbo.api.IDemoService" ref="demoServiceImpl" timeout="300000">
+         <dubbo:method name="testMethod" ></dubbo:method>
+    </dubbo:service>
+
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DemoParent/DemoParent.iml" filepath="$PROJECT_DIR$/DemoParent/DemoParent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DemoServiceApi/DemoServiceApi.iml" filepath="$PROJECT_DIR$/DemoServiceApi/DemoServiceApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DemoServiceConsumer/DemoServiceConsumer.iml" filepath="$PROJECT_DIR$/DemoServiceConsumer/DemoServiceConsumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DemoServiceProvider/DemoServiceProvider.iml" filepath="$PROJECT_DIR$/DemoServiceProvider/DemoServiceProvider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaUtil/JavaUtil.iml" filepath="$PROJECT_DIR$/JavaUtil/JavaUtil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Main.iml" filepath="$PROJECT_DIR$/Main.iml" />
+    </modules>
+  </component>
+</project>

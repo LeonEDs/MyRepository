@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="DemoServiceConsumer" />
+        <module name="JavaUtil" />
+        <module name="DemoServiceApi" />
+        <module name="DemoServiceProvider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DemoParent" target="1.8" />
+      <module name="DemoServiceApi" target="1.8" />
+      <module name="DemoServiceConsumer" target="1.8" />
+      <module name="DemoServiceProvider" target="1.8" />
+      <module name="JavaUtil" target="1.8" />
+      <module name="Main" target="1.5" />
+      <module name="Test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
