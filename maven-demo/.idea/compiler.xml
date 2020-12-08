@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="commons-http" />
+        <module name="rest-client-proxy" />
+        <module name="dubbo-service-api" />
+        <module name="config-server" />
+        <module name="cas-client-springboot" />
+        <module name="JavaUtil" />
+        <module name="dubbo-service" />
+        <module name="eureka-server" />
+        <module name="commons-utils" />
+        <module name="dubbo-consumer" />
+        <module name="sc-item-demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cas-client-springboot" target="1.8" />
+      <module name="cloud-commons" target="1.8" />
+      <module name="cloud-modules" target="1.8" />
+      <module name="common-parent" target="1.5" />
+      <module name="commons-http" target="1.8" />
+      <module name="commons-utils" target="1.8" />
+      <module name="config-server" target="1.8" />
+      <module name="DemoParent" target="1.8" />
+      <module name="dubbo-consumer" target="1.5" />
+      <module name="dubbo-service" target="1.5" />
+      <module name="dubbo-service-api" target="1.5" />
+      <module name="eureka-server" target="1.8" />
+      <module name="JavaUtil" target="1.5" />
+      <module name="Main" target="1.5" />
+      <module name="rest-client-proxy" target="1.5" />
+      <module name="sc-item-demo" target="1.8" />
+      <module name="spring-cloud-project" target="1.8" />
+      <module name="Test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="commons-http" options="-parameters" />
+      <module name="commons-utils" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="sc-item-demo" options="-parameters" />
+    </option>
+  </component>
+</project>

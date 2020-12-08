@@ -4,17 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.Demo.ALL</groupId>
+    <groupId>com.demo.main</groupId>
     <artifactId>Main</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>DemoServiceApi</module>
-        <module>DemoParent</module>
-        <module>DemoServiceProvider</module>
-        <module>DemoServiceConsumer</module>
+        <module>dubbo-service-api</module>
+        <module>dubbo-consumer</module>
+        <module>dubbo-service</module>
         <module>JavaUtil</module>
-        <module>Test</module>
+        <module>common-parent</module>
+        <module>rest-client-proxy</module>
+        <module>cas-client-springboot</module>
     </modules>
 </project>

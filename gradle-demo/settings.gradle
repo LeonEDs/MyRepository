@@ -1,0 +1,6 @@
+rootProject.name = 'GradleDemo'
+
+include 'eureka'
+include 'CloudClient'
+include 'nacos'
+

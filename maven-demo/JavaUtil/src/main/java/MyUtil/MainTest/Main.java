@@ -3,34 +3,45 @@ package MyUtil.MainTest;
 
 import MyUtil.NumericUtil.NumericCheckUtils;
 import com.alibaba.dubbo.common.utils.StringUtils;
+import org.apache.commons.collections4.CollectionUtils;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 public class Main
 {
-    private final static String tagIdKey = "tagId=";
 
-    @SuppressWarnings("resource")
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, InstantiationException
+    public static void main(String[] args) throws Exception
     {
-        String param = "tagId=3;";
-        if (StringUtils.isNotEmpty(param))
+        Long maxCustId = 37L;
+        Long minCustId = 12L;
+        String missionCode = "EX202012031442#382";
+
+
+        int parallelNum = 1;
+        long partLength = maxCustId - minCustId;
+
+
+        long split = partLength / 10;
+        for (int i = 0; i < 10; i++)
         {
-            String[] params = param.split(";");
-            Long tagId = null;
-            for (String p : params)
+            long startId;
+            long endId;
+            String taskMissionCode = missionCode + "#" + parallelNum++;
+
+            if (i == (10 - 1))
             {
-                if (p.startsWith(tagIdKey))
-                {
-                    int i = p.indexOf(tagIdKey);
-                    String tagIdStr = p.substring(i+tagIdKey.length());
-                    boolean isN =  NumericCheckUtils.isPositiveInteger(tagIdStr);
-                    if (StringUtils.isNotEmpty(tagIdStr) && isN)
-                    {
-                        tagId = Long.valueOf(tagIdStr);
-                    }
-                }
+                startId = minCustId + split * i;
+                endId = maxCustId;
+            } else
+            {
+                startId = minCustId + split * i;
+                endId = minCustId + split * (i + 1) - 1;
             }
+
+            System.out.println("|| " + startId +" || " + endId +" || " + taskMissionCode);
         }
+
     }
 }
