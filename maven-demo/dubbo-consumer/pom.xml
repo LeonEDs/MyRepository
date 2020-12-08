@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.dubbo.demo</groupId>
-            <artifactId>dubbo-api</artifactId>
+            <artifactId>dubbo-service-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
