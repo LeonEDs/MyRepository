@@ -1,13 +1,9 @@
-package MyUtil.cacheUtil.impl;
+package com.demo.cache.LRU.util.impl;
 
-import MyUtil.cacheUtil.ICache;
+import com.demo.cache.LRU.util.ICache;
 
 import com.googlecode.concurrentlinkedhashmap.ConcurrentLinkedHashMap;
 import com.googlecode.concurrentlinkedhashmap.Weighers;
-import sun.misc.Unsafe;
-import sun.misc.VM;
-import sun.reflect.CallerSensitive;
-import sun.reflect.Reflection;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

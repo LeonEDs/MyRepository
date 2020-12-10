@@ -1,4 +1,4 @@
-package MyUtil.cacheUtil;
+package com.demo.cache.LRU.util;
 
 import java.util.function.Function;
 

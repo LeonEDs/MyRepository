@@ -1,4 +1,4 @@
-package MyUtil.MainTest;
+package com.demo.MainTest;
 
 import org.apache.commons.collections4.CollectionUtils;
 

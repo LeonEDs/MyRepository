@@ -1,4 +1,4 @@
-package MyUtil.MainTest;
+package com.demo.MainTest;
 
 import java.util.Arrays;
 import java.util.List;

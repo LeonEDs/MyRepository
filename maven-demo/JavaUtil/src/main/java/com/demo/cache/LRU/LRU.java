@@ -1,4 +1,4 @@
-package MyUtil.cache.LRU;
+package com.demo.cache.LRU;
 
 import java.util.Collection;
 import java.util.Iterator;

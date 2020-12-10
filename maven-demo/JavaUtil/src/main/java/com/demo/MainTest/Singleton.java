@@ -1,4 +1,4 @@
-package MyUtil.MainTest;
+package com.demo.MainTest;
 
 public class Singleton
 {
