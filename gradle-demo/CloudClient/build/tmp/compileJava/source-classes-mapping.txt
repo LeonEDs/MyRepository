@@ -1,2 +1,0 @@
-com/springcloud/demo/client/ServiceClientApplication.java
- com.springcloud.demo.client.ServiceClientApplication

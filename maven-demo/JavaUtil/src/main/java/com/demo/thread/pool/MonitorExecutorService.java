@@ -1,5 +1,6 @@
 package com.demo.thread.pool;
 
+import com.demo.MainTest.Main;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 
@@ -17,8 +18,6 @@ public class MonitorExecutorService<T extends Callable<Boolean>>
 
     private final Map<Future<Boolean>, T> mapTaskResult;
 
-    private Map<String, Object> logParam;
-
     public MonitorExecutorService(int executeTaskNum)
     {
         this.monitor = Executors.newSingleThreadExecutor();
@@ -26,7 +25,7 @@ public class MonitorExecutorService<T extends Callable<Boolean>>
         this.mapTaskResult = new HashMap<>();
     }
 
-    public void addTaskList(List<T> taskList)
+    public void addTaskList(List<T> taskList) throws InterruptedException
     {
         if (CollectionUtils.isNotEmpty(taskList))
         {
@@ -79,15 +78,31 @@ public class MonitorExecutorService<T extends Callable<Boolean>>
                     }
                 }while (!isOver);
 
-                System.out.println(executor.isShutdown());
-                log.debug("Executor - Monitor - {} - >>> result : {}", logParam.getOrDefault("message", "null"), isSuccess);
+                executor.shutdown();
+                monitor.shutdown();
             });
+
+            shutdown();
         }
     }
 
-    public MonitorExecutorService<T> setLogParam(Map<String, Object> logParam)
+    public void shutdown()
     {
-        this.logParam = logParam;
-        return this;
+
+        System.out.println("##################\n"+executor.isShutdown() +" "+monitor.isShutdown());
+        try
+        {
+            if (!executor.awaitTermination(20, TimeUnit.SECONDS))
+            {
+                System.out.println("######shutdownNow*******");
+                executor.shutdownNow();
+                monitor.shutdownNow();
+            }
+        }catch (Exception e)
+        {
+            executor.shutdownNow();
+            monitor.shutdownNow();
+        }
+        System.out.println("******************\n"+executor.isShutdown() +" "+ monitor.isShutdown());
     }
 }
