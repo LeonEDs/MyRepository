@@ -12,7 +12,7 @@
     <modules>
         <module>JavaUtil</module>
         <module>common-parent</module>
-        <module>common-utils</module>
+        <module>common</module>
         <module>dubbo</module>
         <module>springboot</module>
     </modules>

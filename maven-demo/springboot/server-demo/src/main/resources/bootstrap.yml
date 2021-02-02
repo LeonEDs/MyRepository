@@ -1,0 +1,24 @@
+server:
+  port: 8071
+spring:
+  application:
+    name: server-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
+        namespace: crm
+      config:
+        server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
+        file-extension: yml
+        namespace: crm
+    sentinel:
+      transport:
+        dashboard: ${SENTINEL_DASHBOARD_HOST:localhost}:${SENTINEL_DASHBOARD_PORT:8021}
+    bus:
+      trace:
+        enabled: true
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 15000

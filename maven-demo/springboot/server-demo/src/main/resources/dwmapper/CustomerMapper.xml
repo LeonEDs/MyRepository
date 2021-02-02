@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xad.server.dwmapper.CustomerMapper">
+
+    <select id="queryMaxCustId" resultType="java.lang.Long">
+        SELECT MAX(cust_id) FROM mtc_gg_sale_customer
+    </select>
+
+    <select id="queryMinCustId" resultType="java.lang.Long">
+        SELECT MIN(cust_id) FROM mtc_gg_sale_customer
+    </select>
+</mapper>

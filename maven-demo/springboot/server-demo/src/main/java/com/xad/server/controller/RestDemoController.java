@@ -1,6 +1,6 @@
 package com.xad.server.controller;
 
-import com.xad.server.service.TestService;
+import com.xad.server.proxy.RestApiTestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import java.util.Map;
 public class RestDemoController
 {
     @Autowired
-    TestService testService;
+    RestApiTestService testService;
 
     @GetMapping("test1")
     public void testService1()

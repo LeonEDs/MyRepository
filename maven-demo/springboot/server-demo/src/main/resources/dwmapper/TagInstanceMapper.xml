@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xad.server.dwmapper.TagInstanceMapper">
+
+    <insert id="insertWithSEQ">
+        INSERT INTO stc_gg_sale_taginst(ID, TAG_ID, TAG_CODE, CUST_ID, TAG_VALUE, EXECUTION_CODE, REMARK, CREATOR, MODIFIER, CREATE_TIME, MODIFY_TIME)
+        VALUES(nextval('tag_instance_id_seq'), #{inst.tagId}, #{inst.tagCode}, #{inst.custId}, #{inst.tagValue}, #{inst.executionCode},
+        #{inst.remark}, #{inst.creator}, #{inst.modifier}, #{inst.createTime}, #{inst.modifyTime});
+    </insert>
+</mapper>

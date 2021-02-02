@@ -1,6 +1,5 @@
 package com.xad.server.controller;
 
-import com.xad.server.listener.event.BaseEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.web.bind.annotation.GetMapping;

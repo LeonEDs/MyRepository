@@ -38,7 +38,7 @@ public class ServiceBeanDefinitionRegistry implements BeanDefinitionRegistryPost
     {
         //这里一般我们是通过反射获取需要代理的接口的clazz列表, null所有包
         //比如判断包下面的类，或者通过某注解标注的类等等
-        Set<Class<?>> beanClazz = scannerPackages("**.service");
+        Set<Class<?>> beanClazz = scannerPackages("**.proxy");
         for (Class<?> clazz : beanClazz)
         {
             boolean isAnnotation = clazz.isAnnotationPresent(RestRequest.class);
