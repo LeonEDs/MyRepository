@@ -15,6 +15,7 @@
         <module>common</module>
         <module>dubbo</module>
         <module>springboot</module>
+        <module>spark</module>
     </modules>
 
     <properties>
