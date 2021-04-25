@@ -2,6 +2,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.xad.server.MainApplication;
 import com.xad.server.dto.DataModelReq;
 import com.xad.server.dto.Result;
+import com.xad.server.dwmapper.SelectDwMapper;
 import com.xad.server.jobhandler.JobHandlerConstants;
 import com.xad.server.jobhandler.executor.TagTaskExecutor;
 import com.xad.server.service.DataModelCoreRestClient;
@@ -32,12 +33,14 @@ public class JUnitTest
     TagTaskExecutor tagTaskExecutor;
     @Autowired
     DataModelCoreRestClient indexClient;
+    @Autowired
+    SelectDwMapper selectDwMapper;
 
     @Test
     public void execSQL()
     {
-        List<Map<String, Object>> res = service.querySQL();
-        System.out.println(res.get(res.size() - 1));
+        List<Map<String, Object>> res = selectDwMapper.querySql();
+        System.out.println(res.get(0));
     }
 
     @Test

@@ -16,6 +16,8 @@
         <module>dubbo</module>
         <module>springboot</module>
         <module>spark</module>
+        <module>spring</module>
+        <module>spark-java</module>
     </modules>
 
     <properties>
@@ -25,12 +27,56 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>zhenergy-nexus</id>-->
+<!--            <name>zhenergy-repository</name>-->
+<!--            <url>https://nexus.zhenergy.com.cn/repository/maven-proxy/</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>spring-milestones</id>-->
+<!--            <name>Spring Milestones</name>-->
+<!--            <url>https://repo.spring.io/libs-milestone</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>sonatype-nexus-snapshots</id>-->
+<!--            <name>Sonatype Nexus Snapshots</name>-->
+<!--            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>repository.spring.release</id>-->
+<!--            <name>Spring GA Repository</name>-->
+<!--            <url>https://repo.spring.io/plugins-release/</url>-->
+<!--        </pluginRepository>-->
+<!--        <pluginRepository>-->
+<!--            <id>jcenter-snapshots</id>-->
+<!--            <name>jcenter</name>-->
+<!--            <url>http://oss.jfrog.org/artifactory/oss-snapshot-local/</url>-->
+<!--        </pluginRepository>-->
+<!--        <pluginRepository>-->
+<!--            <id>jcenter-releases</id>-->
+<!--            <name>jcenter</name>-->
+<!--            <url>http://jcenter.bintray.com</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>

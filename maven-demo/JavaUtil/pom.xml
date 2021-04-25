@@ -53,10 +53,14 @@
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.1.0</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.postgresql</groupId>-->
+<!--            <artifactId>gsjdbc4</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.postgresql</groupId>
-            <artifactId>gsjdbc4</artifactId>
-            <version>1.0.0</version>
+            <artifactId>postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>org.owasp.encoder</groupId>

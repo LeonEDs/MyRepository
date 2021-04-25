@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
+import com.baomidou.mybatisplus.generator.config.converts.PostgreSqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
@@ -26,26 +27,30 @@ public class Generator
     private static String canonicalPath = "";
 
     //基本包名
-    private static String basePackage = "com.zjhcsoft.crm.xxl.base";
+    private static String basePackage = "com.zjhcsoft.crm.user.base";
 
     //要生成的表名
-    private static String[] tables = {"ods_crm_ent_customer"};
+    private static String[] tables = {"summary_config", "summary_favorite"};
     //table前缀
     private static String prefix = "";
 
     //数据库类型
-//    private static DbType dbType = DbType.MYSQL;
-    private static DbType dbType = DbType.POSTGRE_SQL;
+    private static DbType dbType = DbType.MYSQL;
+//    private static DbType dbType = DbType.POSTGRE_SQL;
 
     //数据库配置四要素
 //    private static String driverName = "com.mysql.cj.jdbc.Driver";
 //    private static String url = "jdbc:mysql://10.157.93.227:3306/test-crm-01?useUnicode=true&characterEncoding=utf8";
 //    private static String username = "test-crm";
 //    private static String password = "DispC_crm_3142";
-    private static String driverName = "org.postgresql.Driver";
-    private static String url = "jdbc:postgresql://10.157.93.151:25308/db_test_crm?useUnicode=true&characterEncoding=utf8&currentSchema=mscm_gg_crm";
-    private static String username = "test_crm2";
-    private static String password = "test_crm_123";
+//    private static String driverName = "org.postgresql.Driver";
+//    private static String url = "jdbc:postgresql://10.157.93.151:25308/db_test_crm?useUnicode=true&characterEncoding=utf8&currentSchema=mscm_gg_crm";
+//    private static String username = "test_crm2";
+//    private static String password = "test_crm_123";
+    private static String driverName = "com.mysql.cj.jdbc.Driver";
+    private static String url = "jdbc:mysql://10.162.122.72:3306/test-crm-01?useUnicode=true&characterEncoding=utf8";
+    private static String username = "test-crm";
+    private static String password = "DispC_crm_3142";
 
 
     public static void main(String[] args)
@@ -73,6 +78,8 @@ public class Generator
                 .setUrl(url)
                 .setUsername(username)
                 .setPassword(password)
+//                .setSchemaName("mscm_gg_crm")
+//                .setTypeConvert(new PostgreSqlTypeConvert() {
                 .setTypeConvert(new MySqlTypeConvert() {
                     // 自定义数据库表字段类型转换【可选】
                     //@Override
@@ -147,7 +154,7 @@ public class Generator
         gen.setPackageInfo(new PackageConfig()
                 //.setModuleName("User")
                 .setParent(basePackage)// 自定义包路径
-                .setController("controller")// 这里是控制器包名，默认 web
+                .setController("rest")// 这里是控制器包名，默认 web
                 .setEntity("entity") // 设置Entity包名，默认entity
                 .setMapper("mapper") // 设置Mapper包名，默认mapper
                 .setService("service") // 设置Service包名，默认service
