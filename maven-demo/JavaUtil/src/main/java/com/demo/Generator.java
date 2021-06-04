@@ -27,10 +27,10 @@ public class Generator
     private static String canonicalPath = "";
 
     //基本包名
-    private static String basePackage = "com.zjhcsoft.crm.user.base";
+    private static String basePackage = "com.zjhcsoft.crm.tag.base";
 
     //要生成的表名
-    private static String[] tables = {"summary_config", "summary_favorite"};
+    private static String[] tables = {"tag_group_evaluate"};
     //table前缀
     private static String prefix = "";
 
