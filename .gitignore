@@ -12,6 +12,12 @@ target/
 .metadata
 .gitignore
 
+### Gradle ###
+.gradle
+build
+out
+libs
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

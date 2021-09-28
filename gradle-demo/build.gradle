@@ -1,0 +1,183 @@
+buildscript {
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "http://maven.ruixin.net/repository/RXGroup/" }
+        maven { url "http://192.168.0.125:8081/repository/RXGroup/" }
+        mavenCentral()
+    }
+}
+allprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "http://maven.ruixin.net/repository/RXGroup/" }
+        maven { url "http://192.168.0.125:8081/repository/RXGroup/" }
+        mavenCentral()
+    }
+}
+
+task copyTestResources(type: Copy) {
+    from "${projectDir}/src/test/resources"
+    into "${buildDir}/classes/test"
+}
+subprojects {
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "http://maven.ruixin.net/repository/RXGroup/" }
+        maven { url "http://192.168.0.125:8081/repository/RXGroup/" }
+        mavenCentral()
+    }
+    dependencies {
+        testCompile 'junit:junit:4.12'
+        testCompile 'org.springframework:spring-test:4.3.8.RELEASE'
+        //servlet api; oralce driver
+        compile 'javax.servlet:javax.servlet-api:3.1.0'
+        //compile 'oracle:ojdbc6:1.0.0'
+        //spring framework
+        compile 'org.springframework:spring-context:4.3.8.RELEASE'
+        compile 'org.springframework:spring-webmvc:4.3.8.RELEASE'
+        compile 'org.springframework:spring-context-support:4.3.8.RELEASE'
+        compile 'org.springframework:spring-aspects:4.3.8.RELEASE'
+        compile 'org.springframework:spring-jdbc:4.3.8.RELEASE'
+        compile 'org.springframework:spring-orm:4.3.8.RELEASE'
+        compile 'org.springframework:spring-tx:4.3.8.RELEASE'
+        compile 'org.springframework:spring-boot-starter:2.1.10.RELEASE'
+        compile 'org.springframework:spring-boot-starter-tomcat:2.1.10.RELEASE'
+        compile 'org.springframework:spring-boot-starter-web:2.1.10.RELEASE'
+        compile group: 'com.github.theborakompanioni', name: 'thymeleaf-extras-shiro', version: '2.0.0'
+
+//        compile 'org.springframework.data:spring-data-redis:2.0.0.RELEASE'
+        //hibernate framework
+        compile 'org.hibernate:hibernate-core:4.3.11.Final'
+        //datasource druid
+        compile 'com.alibaba:druid:1.1.2'
+        compile 'com.alibaba:fastjson:1.2.28'
+        //log
+        compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.11.0'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-web', version: '2.11.0'
+        compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.25'
+
+        //net.ruixin.util.json
+        compile 'com.fasterxml.jackson.core:jackson-databind:2.5.4'
+        //view framework
+        compile 'com.ibeetl:beetl:2.7.21'
+        compile 'com.ibeetl:btjson:0.94'
+        //tool
+        compile 'commons-beanutils:commons-beanutils:1.8.3'
+        compile 'commons-io:commons-io:2.4'
+        compile 'commons-fileupload:commons-fileupload:1.3.2'
+        compile 'org.apache.commons:commons-lang3:3.6'
+        compile group: 'org.apache.commons', name: 'commons-text', version: '1.3'
+        //ftp
+        compile group: 'commons-net', name: 'commons-net', version: '1.4.1'
+        compile 'commons-collections:commons-collections:3.2.1'
+
+        //shiro
+        compile 'org.apache.shiro:shiro-core:1.3.2'
+        compile 'org.apache.shiro:shiro-web:1.3.2'
+        compile 'org.apache.shiro:shiro-spring:1.3.2'
+        compile 'org.apache.shiro:shiro-ehcache:1.3.2'
+        //jedis
+        compile "redis.clients:jedis:2.9.0"
+        // https://mvnrepository.com/artifact/net.coobird/thumbnailator
+        compile group: 'net.coobird', name: 'thumbnailator', version: '0.4.8'
+        // https://mvnrepository.com/artifact/com.twelvemonkeys.imageio/imageio-jpeg
+        compile group: 'com.twelvemonkeys.imageio', name: 'imageio-jpeg', version: '3.0-rc5'
+
+        // https://mvnrepository.com/artifact/cn.afterturn/easypoi-base
+        //compile group: 'cn.afterturn', name: 'easypoi-base', version: '4.1.3'
+        // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
+        compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.2.0.Final'
+        // https://mvnrepository.com/artifact/javax.el/javax.el-api
+        compile group: 'javax.el', name: 'javax.el-api', version: '2.2.4'
+        // https://mvnrepository.com/artifact/org.glassfish.web/javax.el
+        compile group: 'org.glassfish.web', name: 'javax.el', version: '2.2.4'
+        // https://mvnrepository.com/artifact/jaxen/jaxen
+        compile group: 'jaxen', name: 'jaxen', version: '1.1.6'
+        // https://mvnrepository.com/artifact/javax.validation/validation-api
+        compile group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+        // https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
+        compile group: 'com.google.code.findbugs', name: 'jsr305', version: '1.3.9'
+
+        // https://mvnrepository.com/artifact/com.belerweb/pinyin4j
+        //汉字转拼音
+        compile group: 'com.belerweb', name: 'pinyin4j', version: '2.5.1'
+
+        //汉字转英文
+        // compile group: 'net.ruixin', name: 'Translation', version: '1.0'
+
+        //增加JGeometry
+        //compile group: 'oracle', name: 'sdoutl', version: '1.0.0'
+        //增加JGeometry
+        // compile group: 'oracle', name: 'sdoapi', version: '1.0.0'
+//        compile 'xerces:xerces:2.4.0'
+        compile 'batik:batik-css:1.6'
+        compile 'batik:batik-dom:1.6'
+        compile 'batik:batik-ext:1.6'
+        compile 'batik:batik-gvt:1.6'
+        compile 'batik:batik-xml:1.6'
+        compile 'batik:batik-util:1.6'
+        compile 'batik:batik-parser:1.6'
+        compile 'batik:batik-script:1.6'
+        compile 'batik:batik-bridge:1.6'
+        compile 'batik:batik-svg-dom:1.6'
+        compile 'batik:batik-awt-util:1.6'
+        //  compile 'batik:batik-gui-util:1.6'
+        compile 'batik:batik-transcoder:1.6'
+
+        //shiro
+        compile 'org.apache.shiro:shiro-core:1.3.2'
+        compile 'org.apache.shiro:shiro-web:1.3.2'
+        compile 'org.apache.shiro:shiro-spring:1.3.2'
+        compile 'org.apache.shiro:shiro-ehcache:1.3.2'
+
+        //es
+        compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '6.6.1'
+
+        //reflections
+        compile "org.reflections:reflections:0.9.10"
+
+
+//        compile fileTree(dir:'../libs',include:['*.jar']){
+//            exclude group: 'org.apache.http.HttpHost'
+//        }
+//        compile files('../libs/artemis-http-client-1.0.1-SNAPSHOT.jar') {
+//            exclude group: 'org.apache.http',module: 'library'
+//        }
+
+        compile files('../libs/PCI2.jar')
+
+//        compile fileTree(dir:'../libs',include:['*.jar']){
+//            exclude group: 'org.apache.http.HttpHost'
+//        }
+//        compile files('../libs/artemis-http-client-1.0.1-SNAPSHOT.jar') {
+//            exclude group: 'org.apache.http',module: 'library'
+//        }
+        compile files('../libs/RBSPAdapter2.jar')
+
+        compile 'org.apache.poi:poi:4.0.0'
+        compile 'org.apache.poi:poi-ooxml:4.0.0'
+
+        compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+        testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+
+        // poi
+        compile group: 'org.apache.poi', name: 'poi-examples', version: '4.0.0'
+
+        // barcode4j-light
+        compile group: 'net.sf.barcode4j', name: 'barcode4j-light', version: '2.0'
+        // zxing
+        compile group: 'com.google.zxing', name: 'core', version: '3.2.1'
+
+        // cxf
+        compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '3.2.8'
+        compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: '3.2.8'
+
+        compile fileTree(dir:'../libs',include:['*.jar'])
+
+        compile group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
+    }
+
+}
