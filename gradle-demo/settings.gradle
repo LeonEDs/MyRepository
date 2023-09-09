@@ -1,3 +1,4 @@
-rootProject.name = 'main'
+rootProject.name = 'gradle-demo'
 include 'function'
+include 'workflow'
 

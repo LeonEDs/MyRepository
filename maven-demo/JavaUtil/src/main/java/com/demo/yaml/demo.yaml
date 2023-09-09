@@ -1,0 +1,37 @@
+moduleList:
+  - moduleName: '警情受立案'
+    monitorList:
+  - moduleName: '206监督'
+    monitorList:
+      - monitorCode: 'MT_AJGL_GAPZSWDYQ206JD'
+        monitorName: '公安批注数未达要求'
+        monitorDesc: '不存在提请批准逮捕书和呈请起诉意见书的刑事案件，公安批注数小于3'
+        monitorDescCode: 'GAPZSWDYQ_JCSM'
+        column: 'AJBH'
+        extendCond:
+      - monitorCode: 'MT_AJGL_ZJCLWSC206JD'
+        monitorName: '证据材料未全部上传206系统'
+        monitorDesc: '证据材料未全部上传206系统'
+        monitorDescCode: 'ZJCLWSC_JCSM'
+        column: 'AJBH'
+        extendCond:
+  - moduleName: '办案场所'
+    monitorList:
+      - monitorCode: 'MT_AJGL_GAPZSWDYQ206JD'
+        monitorName: '询讯问时间场所与笔录不一致'
+        monitorDesc: '笔录询问开始时间与场所登记的询问开始时间误差超过15分钟'
+        monitorDescCode: 'GAPZSWDYQ_JCSM'
+        column: 'AJBH'
+        extendCond:
+      - monitorCode: 'MT_AJGL_ZJCLWSC206JD'
+        monitorName: '活动时间间隔超15分钟'
+        monitorDesc: '场所活动记录时间间隔大于15分钟'
+        monitorDescCode: 'ZJCLWSC_JCSM'
+        column: 'AJBH'
+        extendCond:
+      - monitorCode: 'MT_AJGL_ZJCLWSC206JD'
+        monitorName: '随身物品未登记'
+        monitorDesc: '人员离区有随身物品处置，但安全检查未登记随身物品信息'
+        monitorDescCode: 'ZJCLWSC_JCSM'
+        column: 'AJBH'
+        extendCond:

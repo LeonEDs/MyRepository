@@ -76,14 +76,14 @@ public class TagInstanceServiceImpl implements TagInstanceService {
         entity.setCustId(custId);
         List<TagInstance> instanceList = tagInstanceMapper.selectList(new QueryWrapper<>(entity));
         //TagInstance添加名称
-        List<Long> tagIds = instanceList.stream().map(instance -> instance.getTagId()).collect(Collectors.toList());
+        List<Long> tagIds = instanceList.stream().map(TagInstance::getTagId).collect(Collectors.toList());
         if (CollectionUtils.isEmpty(tagIds)) {
             return instanceDtoList;
         }
         List<TagEntity> tagEntityList = tagEntityMapper.selectList(new QueryWrapper<TagEntity>().in("id", tagIds));
         if (CollectionUtils.isNotEmpty(tagEntityList)) {
-            Map<Long, String> tagIdNameMap = tagEntityList.stream().collect(Collectors.toMap(tag -> tag.getId(), tag -> tag.getTagName()));
-            Map<Long, String> tagIdAutoMap = tagEntityList.stream().collect(Collectors.toMap(tag -> tag.getId(), tag -> tag.getTagAutomanual()));
+            Map<Long, String> tagIdNameMap = tagEntityList.stream().collect(Collectors.toMap(TagEntity::getId, TagEntity::getTagName));
+            Map<Long, String> tagIdAutoMap = tagEntityList.stream().collect(Collectors.toMap(TagEntity::getId, TagEntity::getTagAutomanual));
             instanceList.forEach(instance -> instance.setTagName(tagIdNameMap.get(instance.getTagId())));
             instanceList.forEach(instance -> instance.setTagAutoType(tagIdAutoMap.get(instance.getTagId())));
 

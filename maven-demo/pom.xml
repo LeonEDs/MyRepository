@@ -17,6 +17,7 @@
         <module>springboot</module>
         <module>spring</module>
         <module>spark-java</module>
+        <module>model</module>
     </modules>
 
     <properties>

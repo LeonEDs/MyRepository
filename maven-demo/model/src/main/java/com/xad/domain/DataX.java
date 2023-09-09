@@ -1,7 +1,7 @@
-package com.xad;
+package com.xad.domain;
 
-import com.xad.utils.valid.field.ParamValid;
-import com.xad.utils.valid.field.ValidEnum;
+import com.xad.annotation.ParamValid;
+import com.xad.enums.ValidEnum;
 import lombok.Data;
 
 import java.util.Date;

@@ -2,7 +2,6 @@ buildscript {
     repositories {
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         maven { url "http://maven.ruixin.net/repository/RXGroup/" }
-        maven { url "http://192.168.0.125:8081/repository/RXGroup/" }
         mavenCentral()
     }
 }
@@ -13,7 +12,6 @@ allprojects {
     repositories {
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         maven { url "http://maven.ruixin.net/repository/RXGroup/" }
-        maven { url "http://192.168.0.125:8081/repository/RXGroup/" }
         mavenCentral()
     }
 }
@@ -26,7 +24,6 @@ subprojects {
     repositories {
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         maven { url "http://maven.ruixin.net/repository/RXGroup/" }
-        maven { url "http://192.168.0.125:8081/repository/RXGroup/" }
         mavenCentral()
     }
     dependencies {
